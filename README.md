@@ -26,6 +26,44 @@ At this point the project should be running on http://localhost:8000
 
 **Reference**: https://laravel.com/docs/10.x#your-first-laravel-project
 
+## Installation of this project
+1. Clone the repo
+2. Install dependencies
+   `composer install`
+3. Start Symfony Server
+   `php artisan serve`
+
+## Create a first Controller:
+
+`$>php artisan make:controller TodoController`
+
+This command will only create the Controller class. We still have to:
+
+1.- Route it in `routes/web.php`
+
+```Route::get('/todo', [TodoController::class, 'index']);```
+
+
+2.- Create the view
+    
+```resources/views/todo/index.blade.php```  
+
+```html
+    @extends('base')
+    
+    @section('title', 'Page Title')
+    
+    @section('content')
+    <h1>Hello {{ $controller_name }}! ✅</h1>
+    
+        This friendly message is coming from:
+        <ul>
+            <li>Your controller at <code>app/Http/Controllers/TodoController.php</code></li>
+            <li>Your template at <code>resources/views/todo/index.blade.php</code></li>
+        </ul>
+    @endsection
+```
+
 See [commit](https://github.com/ipallares/laravel-basics/commit/251550404ee847e0194faeec552d7a0d2c0e5a4c)
 
 ## Configure the Database
