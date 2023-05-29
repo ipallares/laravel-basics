@@ -80,3 +80,16 @@ DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/db.sqlite
 ```
 
+## Create a Doctrine Entity
+
+1.- Run command: 
+
+`$>php artisan make:model Todo -m`
+
+**Note:** The `m` option will create en empty Migration file.
+
+Differently from Symfony, Laravel does not allow us to provide the properties of the Entity in the command, neither to automatically generate the Migration file with all the changes to sync Model and DB. Both things will have to be done manually.
+
+2.- Add the properties to the Model file.
+
+3.- Fill the migration Class
