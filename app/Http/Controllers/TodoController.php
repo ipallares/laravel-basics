@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use App\Services\TodoService;
 use Illuminate\Contracts\View\View;
 
 class TodoController extends Controller
 {
-    public function index(): View {
+    public function index(TodoService $todoService): View {
 
-        $todos = Todo::all();
+        $todos = $todoService->findAll();
 
         return view(
             'todo.index',
