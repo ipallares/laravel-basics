@@ -114,3 +114,7 @@ Differently from Symfony, even when having a single implementation of the interf
 
 ## Adding a new implementation for the Interface
 Now we give a new implementation for the `TodoService` class, called `TodoCustomService` which basically gives a hardcoded list of Todos (so it is just for the purpose of showing its use). Code can be seen [here](https://github.com/ipallares/laravel-basics/commit/dee01e78d14f9bbfc2c448a106bbb596b5670720). It is completely analogous to the previous example as we in Laravel we need to bind the class implementations to Interfaces in all cases.
+
+## Create an endpoint
+A new controller, with an api route to show the Todos in Json format is added. The code can be seen [here](https://github.com/ipallares/laravel-basics/commit/e3371748138a727dd73de6a497fba9da94ad6207).
+In this case, for configuring the route, it is more appropriate to do it in the `routes/api.php` file.
