@@ -93,3 +93,8 @@ Differently from Symfony, Laravel does not allow us to provide the properties of
 2.- Add the properties to the Model file.
 
 3.- Fill the migration Class
+
+See [commit](https://github.com/ipallares/laravel-basics/commit/3ccde365072f39eee1dc8193c62d7192221d7b1d)
+
+## Get Todos from DB
+We will use the Todo Model class as a Facade to get back all the Todos from the DB and show them in frontend.

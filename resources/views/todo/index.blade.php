@@ -1,13 +1,16 @@
 @extends('base')
 
-@section('title', 'Page Title')
+@section('title', 'Hello {{ $controller_name }}! ✅')
 
 @section('content')
-    <h1>Hello {{ $controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>TODO List</h1>
     <ul>
-        <li>Your controller at <code>app/Http/Controllers/TodoController.php</code></li>
-        <li>Your template at <code>resources/views/todo/index.blade.php</code></li>
+        @foreach ($todoList as $todo)
+            @php
+                $color = $todo->is_finished ? 'green' : 'red';
+            @endphp
+
+            <li style="color:{{ $color }}">{{ $todo->name }}</li>
+        @endforeach
     </ul>
 @endsection
