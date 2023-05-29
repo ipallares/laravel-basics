@@ -98,3 +98,10 @@ See [commit](https://github.com/ipallares/laravel-basics/commit/3ccde365072f39ee
 
 ## Get Todos from DB
 We will use the Todo Model class as a Facade to get back all the Todos from the DB and show them in frontend.
+
+See [commit](https://github.com/ipallares/laravel-basics/commit/b5f2b8c469da2d514feae275bf901c829907a7c1)
+
+## Use Service classes
+It is bad practice to connect directly Controllers to Persistence Layers (Repository). We will use an intermediate class, following naming convention `{entityName}Service`, in this case `TodoService`.
+This intermediate class will be called by the proper input System (Controller, Command, other services...) and will access the DB.
+In our particular example there is no business logic involved, but still we wanna keep the layer for consistency and maintainability purposes.
