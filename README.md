@@ -25,3 +25,20 @@ Just a demo project to show Laravel basic features.
 At this point the project should be running on http://localhost:8000
 
 **Reference**: https://laravel.com/docs/10.x#your-first-laravel-project
+
+See [commit](https://github.com/ipallares/laravel-basics/commit/251550404ee847e0194faeec552d7a0d2c0e5a4c)
+
+## Configure the Database
+To keep things simple we will be using a sqlite DB.
+
+1.- We will create the DB file in the `database` folder.
+
+`touch database/db.sqlite`
+
+2.- Configure the DB connection in the `.env` file
+
+```
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/db.sqlite
+```
+
