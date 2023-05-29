@@ -105,3 +105,9 @@ See [commit](https://github.com/ipallares/laravel-basics/commit/b5f2b8c469da2d51
 It is bad practice to connect directly Controllers to Persistence Layers (Repository). We will use an intermediate class, following naming convention `{entityName}Service`, in this case `TodoService`.
 This intermediate class will be called by the proper input System (Controller, Command, other services...) and will access the DB.
 In our particular example there is no business logic involved, but still we wanna keep the layer for consistency and maintainability purposes.
+
+It can be seen [commit](https://github.com/ipallares/laravel-basics/commit/85e2b28804eb746c75907f3109cc2ca909639677)
+
+## Dependency Inversion
+As stated by the `D` in the `SOLID` Principles, we wanna depend on abstractions and not implementations (to be use with caution and common sense :) ). This principle is aimed at decoupling our code and make maintenance easier. In [this commit](https://github.com/ipallares/laravel-basics/commit/7fa27b5c11923b17e273f32d10271a3ae0c4621a) can be seen, how we inject an interface `TodoServiceInterface` instead of the `TodoService` class.
+Differently from Symfony, even when having a single implementation of the interface, we still need to bind the interface to the implementation in the `AppServiceProvider` class. 
