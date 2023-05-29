@@ -7,7 +7,7 @@ namespace App\Services;
 use App\Models\Todo;
 use Illuminate\Database\Eloquent\Collection;
 
-class TodoService
+class TodoService implements TodoServiceInterface
 {
     public function findAll(): Collection
     {
