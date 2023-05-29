@@ -126,3 +126,17 @@ We create a Command class using Laravels's maker:
 
 Which will create a class `ExportTodosCommand` in `app/Console/Commands/ExportTodosCommand.php`. In such class we define, similarly as in Symfony, the proper command `app:export-todos` and its description.
 Then int the method `handle` we implement the logic of the Command. See the whole Code [here](https://github.com/ipallares/laravel-basics/commit/a5e7c83799c146f4722623721aa1cc998637b0d6).
+
+## Configurations
+
+We can work with environment variables in our .env files. The naming convention for such files and their application is `.env[.{environment}]`. If {environment} is empty we work with production environment, otherwise we have by default `dev` and `test` environments (the later overwrite the former). Differently from Symfony we don't push .env files to git (even when we store no secret there). Either if we store secrets there or not, Laravel Best Practice recommend to encrypt .env file if we want to push it. This is made with command `php artisan env:encrypt` which will generate an `env.encrypted` file and outputg the key with which the file was encrypted. Such key should be shared by the time through a password manager so the file can then be decrypted like `php artisan env:decrypt --key=myAwesomeKey`. 
+
+Other than environment variables we can use configuration parameters through Laravel's configuration files. We have created a custom configuration file config/api.php to store the API-related settings.
+
+See [this commit](https://github.com/ipallares/laravel-basics/commit/5606d001d39758842a460f9a6c8a5de1efb0e02a) for more details.
+
+
+
+
+
+Check  [this commit](https://github.com/ipallares/symfony-basics/commit/eaf52be884d2d9969246f080fc5bac08fce0f285) to see it all in practice. 
