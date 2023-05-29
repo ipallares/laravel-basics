@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Services\TodoCustomService;
 use App\Services\TodoServiceInterface;
+use App\Services\TodosExporterInterface;
+use App\Services\TodosJsonExporter;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(TodoServiceInterface::class, TodoCustomService::class);
+        $this->app->bind(TodosExporterInterface::class, TodosJsonExporter::class);
     }
 
     /**
