@@ -118,3 +118,11 @@ Now we give a new implementation for the `TodoService` class, called `TodoCustom
 ## Create an endpoint
 A new controller, with an api route to show the Todos in Json format is added. The code can be seen [here](https://github.com/ipallares/laravel-basics/commit/e3371748138a727dd73de6a497fba9da94ad6207).
 In this case, for configuring the route, it is more appropriate to do it in the `routes/api.php` file.
+
+## Create a Command to get Todos and export to some external service
+We create a Command class using Laravels's maker:
+
+`php artisan make:command ExportTodosCommand` 
+
+Which will create a class `ExportTodosCommand` in `app/Console/Commands/ExportTodosCommand.php`. In such class we define, similarly as in Symfony, the proper command `app:export-todos` and its description.
+Then int the method `handle` we implement the logic of the Command. See the whole Code [here](https://github.com/ipallares/laravel-basics/commit/a5e7c83799c146f4722623721aa1cc998637b0d6).
