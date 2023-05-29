@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(TodoServiceInterface::class, TodoCustomService::class);
         $this->app->bind(TodosExporterInterface::class, TodosJsonExporter::class);
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/api.php', 'api'
+        );
     }
 
     /**
